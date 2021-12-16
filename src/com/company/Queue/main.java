@@ -7,6 +7,7 @@ import java.util.Stack;
 
 public class main {
     public static void main(String[] args) {
+  // Normal Queue
 //        Queue<Integer> queue = new ArrayDeque<>();
 //        queue.add(10);
 //        queue.add(20);
@@ -16,6 +17,7 @@ public class main {
 //        reverse(queue);
 //        System.out.println(queue);
 
+  // Array Queue
 //        ArrayQueue aq = new ArrayQueue(5);
 //        aq.enqueue(10);
 //        aq.enqueue(10);
@@ -28,7 +30,7 @@ public class main {
 //        aq.enqueue(20);
 //        System.out.println(aq.toString());
 
-
+  // Queue with two Stacks
 //        QueueWithTwoStacks queue = new QueueWithTwoStacks();
 //        queue.enqueue(10);
 //        queue.enqueue(20);
@@ -38,6 +40,7 @@ public class main {
 //        System.out.println(queue.dequeue());
 
 
+  // Priority Queue
         PriorityQueue queue = new PriorityQueue();
         queue.add(8);
         queue.add(1);
