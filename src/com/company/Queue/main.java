@@ -29,13 +29,23 @@ public class main {
 //        System.out.println(aq.toString());
 
 
-        QueueWithTwoStacks queue = new QueueWithTwoStacks();
-        queue.enqueue(10);
-        queue.enqueue(20);
-        queue.enqueue(30);
-        queue.enqueue(40);
-        queue.dequeue();
-        System.out.println(queue.dequeue());
+//        QueueWithTwoStacks queue = new QueueWithTwoStacks();
+//        queue.enqueue(10);
+//        queue.enqueue(20);
+//        queue.enqueue(30);
+//        queue.enqueue(40);
+//        queue.dequeue();
+//        System.out.println(queue.dequeue());
+
+
+        PriorityQueue queue = new PriorityQueue();
+        queue.add(8);
+        queue.add(1);
+        queue.add(3);
+        queue.add(2);
+        var removed = queue.remove();
+        System.out.println(removed);
+        System.out.println(queue.toString());
 
     }
 
