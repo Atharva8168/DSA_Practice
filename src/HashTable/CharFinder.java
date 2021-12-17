@@ -1,7 +1,6 @@
 package HashTable;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class CharFinder {
 
@@ -18,7 +17,20 @@ public class CharFinder {
             if (map.get(ch) == 1)
                 return ch;
 
+        return Character.MIN_VALUE;
+    }
 
+
+    public char firstRepeatedCharacter(String input){
+        Set<Character> set = new HashSet<>();
+
+        for (var ch : input.toCharArray()){
+            if (set.contains(ch))
+                return ch;
+            else{
+                set.add(ch);
+            }
+        }
         return Character.MIN_VALUE;
     }
 }
