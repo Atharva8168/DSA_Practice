@@ -1,4 +1,4 @@
-package HashTable;
+package com.company.HashTable;
 
 import java.util.*;
 

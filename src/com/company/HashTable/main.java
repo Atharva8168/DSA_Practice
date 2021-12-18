@@ -1,4 +1,4 @@
-package HashTable;
+package com.company.HashTable;
 
 public class main {
     public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class main {
 //        System.out.println(repeated);
 
 
-        // HashTable
+        // com.company.HashTable
         HashTable table = new HashTable();
         table.put(6 , "A");
         table.put(8 , "B");
