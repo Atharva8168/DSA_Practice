@@ -10,10 +10,9 @@ public class main {
         tree.insert(6);
         tree.insert(8);
         tree.insert(10);
-        tree.traversePreOrder();
-        tree.traverseInOrder();
-        tree.traversePostOrder();
-
-
+//        tree.traversePreOrder();
+//        tree.traverseInOrder();
+//        tree.traversePostOrder();
+        System.out.println(tree.height());
     }
 }
