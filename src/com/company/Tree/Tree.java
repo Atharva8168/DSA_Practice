@@ -108,9 +108,21 @@ public class Tree {
 
     }
 
+    //O(log n)
     public int min(){
-        return min(root);
+        if (root == null)
+            throw new IllegalStateException();
+
+        var current = root;
+        var last = current;
+        while (current != null){
+            last = current;
+            current = current.leftChild;
+        }
+        return last.value;
     }
+
+    //O(n)
     private int min(Node root){
         if (isLeaf(root))
             return root.value;
