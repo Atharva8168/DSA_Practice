@@ -24,6 +24,9 @@ public class main {
 //        tree.traversePostOrder();
 //        System.out.println(tree.height());
 //        System.out.println(tree.min());
-        System.out.println(tree.equals(tree1));
+//        System.out.println(tree.equals(tree1));
+//        tree.swapRoots();
+        System.out.println(tree.isBinarySearchTree());
     }
+
 }
