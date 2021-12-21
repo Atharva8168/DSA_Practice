@@ -121,7 +121,6 @@ public class Tree {
         }
         return last.value;
     }
-
     //O(n)
     private int min(Node root){
         if (isLeaf(root))
@@ -137,5 +136,25 @@ public class Tree {
         return node.leftChild == null && node.rightChild == null;
     }
 
+    public boolean equals (Tree other){
+        if (other == null)
+            throw new IllegalStateException();
+
+        return equals(root , other.root);
+
+
+    }
+
+    private boolean equals (Node first , Node second){
+        if (first == null && second == null)
+            return true;
+
+        if (first != null && second != null)
+            return first.value == second.value &&
+                    equals(first.rightChild, second.rightChild) &&
+                    equals(first.leftChild, second.leftChild);
+
+        return false;
+    }
 
 }
