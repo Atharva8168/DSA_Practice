@@ -19,16 +19,23 @@ public class main {
 //        tree1.insert(6);
 //        tree1.insert(8);
 //        tree1.insert(10);
+
 //        tree.traversePreOrder();
 //        tree.traverseInOrder();
 //        tree.traversePostOrder();
+
 //        System.out.println(tree.height());
+
 //        System.out.println(tree.min());
+
 //        System.out.println(tree.equals(tree1));
+
 //        tree.swapRoots();
 //        System.out.println(tree.isBinarySearchTree());
+
 //        var list = tree.getNodeAtDistance(1);
 //        System.out.println(list);
+
         tree.traverseLevelOrder();
 
     }
