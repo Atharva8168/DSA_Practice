@@ -1,5 +1,7 @@
 package com.company.Tree;
 
+import java.util.ArrayList;
+
 public class Tree {
     public class Node{
         private int value;
@@ -176,6 +178,24 @@ public class Tree {
         var temp = root.leftChild;
         root.leftChild = root.rightChild;
         root.rightChild = temp;
+    }
+
+    public ArrayList printNodeAtDistance(int distance) {
+        ArrayList<Integer> list = new ArrayList<>();
+        printNodeAtDistance(root, distance, list);
+        return list;
+    }
+
+
+    private void printNodeAtDistance(Node root , int distance, ArrayList<Integer> list){
+        if (root == null)
+            return;
+
+        if (distance == 0)
+            list.add(root.value);
+
+        printNodeAtDistance(root.leftChild , distance -1 , list);
+        printNodeAtDistance(root.rightChild , distance -1 , list);
     }
 
 }

@@ -26,7 +26,11 @@ public class main {
 //        System.out.println(tree.min());
 //        System.out.println(tree.equals(tree1));
 //        tree.swapRoots();
-        System.out.println(tree.isBinarySearchTree());
+//        System.out.println(tree.isBinarySearchTree());
+        var list = tree.printNodeAtDistance(1);
+        System.out.println(list);
+
+
     }
 
 }
