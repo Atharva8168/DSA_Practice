@@ -180,13 +180,11 @@ public class Tree {
         root.rightChild = temp;
     }
 
-    public ArrayList printNodeAtDistance(int distance) {
+    public ArrayList getNodeAtDistance(int distance) {
         ArrayList<Integer> list = new ArrayList<>();
         printNodeAtDistance(root, distance, list);
         return list;
     }
-
-
     private void printNodeAtDistance(Node root , int distance, ArrayList<Integer> list){
         if (root == null)
             return;
@@ -197,5 +195,13 @@ public class Tree {
         printNodeAtDistance(root.leftChild , distance -1 , list);
         printNodeAtDistance(root.rightChild , distance -1 , list);
     }
+
+    public void traverseLevelOrder(){
+        for (int i = 0 ; i <= height() ; i++){
+            for (var value : getNodeAtDistance(i))
+                System.out.println(value);
+        }
+    }
+
 
 }

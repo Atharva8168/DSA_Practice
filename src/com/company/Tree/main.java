@@ -11,14 +11,14 @@ public class main {
         tree.insert(8);
         tree.insert(10);
 
-        Tree tree1 =new Tree();
-        tree1.insert(7);
-        tree1.insert(4);
-        tree1.insert(9);
-        tree1.insert(1);
-        tree1.insert(6);
-        tree1.insert(8);
-        tree1.insert(10);
+//        Tree tree1 =new Tree();
+//        tree1.insert(7);
+//        tree1.insert(4);
+//        tree1.insert(9);
+//        tree1.insert(1);
+//        tree1.insert(6);
+//        tree1.insert(8);
+//        tree1.insert(10);
 //        tree.traversePreOrder();
 //        tree.traverseInOrder();
 //        tree.traversePostOrder();
@@ -27,9 +27,9 @@ public class main {
 //        System.out.println(tree.equals(tree1));
 //        tree.swapRoots();
 //        System.out.println(tree.isBinarySearchTree());
-        var list = tree.printNodeAtDistance(1);
-        System.out.println(list);
-
+//        var list = tree.getNodeAtDistance(1);
+//        System.out.println(list);
+        tree.traverseLevelOrder();
 
     }
 
