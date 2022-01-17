@@ -2,7 +2,7 @@ package com.company.HashTable;
 
 import java.util.*;
 
-public class CharFinder {
+public class      CharFinder {
 
 
     public char firstNonRepeatingChar(String input){
