@@ -31,10 +31,14 @@ public class main {
 //        System.out.println(Arrays.toString(items));
 
         // Ascending Order
-        for (int i = items.length - 1; i >= 0 ; i--){
-            items[i] = heap.remove();
-        }
-        System.out.println(Arrays.toString(items));
+//        for (int i = items.length - 1; i >= 0 ; i--){
+//            items[i] = heap.remove();
+//        }
+//        System.out.println(Arrays.toString(items));
+
+        int[] numbers = {5, 3, 8, 4, 1, 2};
+        MaxHeap.heapify(numbers);
+        System.out.println(Arrays.toString(numbers));
     }
 }
 
