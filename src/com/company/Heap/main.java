@@ -36,10 +36,12 @@ public class main {
 //        }
 //        System.out.println(Arrays.toString(items));
 
+        //Heapify -> (array to heap)
         int[] numbers = {5, 3, 8, 4, 1, 2};
 //        MaxHeap.heapify(numbers);
 //        System.out.println(Arrays.toString(numbers));
 
+        // kth Largest Number
         System.out.println(MaxHeap.kthLargest(numbers , 2));
     }
 }
