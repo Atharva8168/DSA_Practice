@@ -13,12 +13,12 @@ public class main {
 //        heap.remove();
 //        System.out.println("Done");
 
-        int[] items = {1, 3, 10, 19, 5, 2, 6};
-        var heap = new Heap();
-
-        for (var item : items){
-            heap.insert(item);
-        }
+//        int[] items = {1, 3, 10, 19, 5, 2, 6};
+//        var heap = new Heap();
+//
+//        for (var item : items){
+//            heap.insert(item);
+//        }
 
 //        while(!heap.isEmpty()){
 //            System.out.println(heap.remove());
@@ -37,8 +37,10 @@ public class main {
 //        System.out.println(Arrays.toString(items));
 
         int[] numbers = {5, 3, 8, 4, 1, 2};
-        MaxHeap.heapify(numbers);
-        System.out.println(Arrays.toString(numbers));
+//        MaxHeap.heapify(numbers);
+//        System.out.println(Arrays.toString(numbers));
+
+        System.out.println(MaxHeap.kthLargest(numbers , 2));
     }
 }
 

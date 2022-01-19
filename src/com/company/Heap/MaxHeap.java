@@ -3,10 +3,8 @@ package com.company.Heap;
 public class MaxHeap {
 
     public static void heapify(int[] array){
-        for (int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++)
             heapify(array, i);
-        }
-
     }
 
     private static void heapify(int[] array, int index){
@@ -34,5 +32,22 @@ public class MaxHeap {
         var temp = array[first];
         array[first] = array[second];
         array[second] = temp;
+    }
+
+    public static int kthLargest(int[] array, int k){
+        if (k < 1 || k > array.length)
+            throw new IllegalStateException();
+
+        Heap heap = new Heap();
+
+        for (var numbers : array){
+            heap.insert(numbers);
+        }
+
+        for (int i = 0; i < k-1; i++){
+            heap.remove();
+        }
+
+        return heap.max();
     }
 }

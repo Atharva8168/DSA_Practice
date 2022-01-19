@@ -107,4 +107,11 @@ public class Heap {
         return (index - 1) / 2;
     }
 
+    public int max(){
+        if (isEmpty())
+            throw new IllegalStateException();
+
+        return items[0];
+    }
+
 }
