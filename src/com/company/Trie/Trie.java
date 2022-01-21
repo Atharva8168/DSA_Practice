@@ -56,4 +56,17 @@ public class Trie {
         current.isEndOfWord = true;
     }
 
+    public boolean contains(String word){
+        if (word == null)
+            return false;
+
+        var current = root;
+        for (char alphabet : word.toCharArray()){
+            if (!current.hasChild(alphabet))
+                return false;
+            current = current.getChild(alphabet);
+        }
+        return current.isEndOfWord;
+    }
+
 }
