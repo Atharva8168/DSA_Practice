@@ -3,7 +3,7 @@ package com.company.Trie;
 import java.util.HashMap;
 
 public class Trie {
-    public static int ALPHABET_SIZE = 26;
+//    public static int ALPHABET_SIZE = 26;
 
     private class Node {
         private char value;
@@ -21,6 +21,18 @@ public class Trie {
         public String toString() {
             return "value=" + value;
         }
+
+        public boolean hasChild(char alphabet){
+            return children.containsKey(alphabet);
+        }
+
+        public void addChild(char alphabet){
+            children.put(alphabet, new Node(alphabet));
+        }
+
+        public Node getChild(char alphabet){
+            return children.get(alphabet);
+        }
     }
 
     private Node root = new Node(' ');
@@ -37,9 +49,9 @@ public class Trie {
 //            current  =  current.children[index];
 
             // Using HashMap
-            if (current.children.get(alphabet) == null)
-                current.children.put(alphabet, new Node(alphabet));
-            current = current.children.get(alphabet);
+            if (!current.hasChild(alphabet))
+                current.addChild(alphabet);
+            current = current.getChild(alphabet);
         }
         current.isEndOfWord = true;
     }
