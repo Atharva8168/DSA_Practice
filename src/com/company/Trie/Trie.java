@@ -33,6 +33,10 @@ public class Trie {
         public Node getChild(char alphabet){
             return children.get(alphabet);
         }
+
+        public Node[] getChildren(){
+            return children.values().toArray(new Node[0]);
+        }
     }
 
     private Node root = new Node(' ');
@@ -67,6 +71,29 @@ public class Trie {
             current = current.getChild(alphabet);
         }
         return current.isEndOfWord;
+    }
+
+    public void traverse(){
+        traverse(root);
+    }
+
+    private void traverse(Node root){
+        // Pre-order traversal -> Used for Inserting or lookup
+        System.out.println(root.value);
+
+        for (var alphabet : root.getChildren()){
+            traverse(alphabet);
+        }
+
+        //Post-order traversal -> used for deleting
+
+//        for (var alphabet : root.getChildren()){
+//            traverse(alphabet);
+//        }
+//
+//        System.out.println(root.value);
+
+
     }
 
 }
