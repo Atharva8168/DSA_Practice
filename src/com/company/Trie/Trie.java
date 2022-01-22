@@ -1,5 +1,6 @@
 package com.company.Trie;
 
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.HashMap;
 
 public class Trie {
@@ -36,6 +37,14 @@ public class Trie {
 
         public Node[] getChildren(){
             return children.values().toArray(new Node[0]);
+        }
+
+        public boolean hasChildren(char alphabet){
+            return !children.isEmpty();
+        }
+
+        public void removeChild(char ch) {
+            children.remove(ch);
         }
     }
 
@@ -94,6 +103,27 @@ public class Trie {
 //        System.out.println(root.value);
 
 
+    }
+
+    public void remove(String word){
+        remove(word, root, 0);
+    }
+
+    private void remove(String word, Node root, int index){
+        if (index == word.length()){
+            root.isEndOfWord = false;
+            return;
+        }
+
+        var ch = word.charAt(index);
+        var child = root.getChild(ch);
+        if (child == null)
+            return;
+
+        remove(word, child, index+1);
+
+        if (!child.hasChildren(ch) && !child.isEndOfWord)
+            root.removeChild(ch);
     }
 
 }
