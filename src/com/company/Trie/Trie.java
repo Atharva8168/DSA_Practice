@@ -1,7 +1,9 @@
 package com.company.Trie;
 
 import java.security.spec.RSAOtherPrimeInfo;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Trie {
 //    public static int ALPHABET_SIZE = 26;
@@ -124,6 +126,43 @@ public class Trie {
 
         if (!child.hasChildren(ch) && !child.isEndOfWord)
             root.removeChild(ch);
+    }
+
+    private List<String> words = new ArrayList<String>();
+
+    public List<String> findWords(String prefix){
+        List<String> words = new ArrayList<>();
+        var lastNode = findLastNodeOf(prefix);
+        findwords(prefix, lastNode, words);
+
+        return words;
+    }
+
+    private void findwords(String prefix, Node root, List<String> words){
+        if (root == null)
+            return;
+
+        if (root.isEndOfWord)
+            words.add(prefix);
+
+        for (var child : root.getChildren()){
+            findwords(prefix + child.value , child, words);
+        }
+    }
+
+    private Node findLastNodeOf(String prefix){
+        if (prefix == null)
+            return null;
+
+        var current = root;
+
+        for (var ch : prefix.toCharArray()){
+            var child = current.getChild(ch);
+            if (child == null)
+                return null;
+            current = child;
+        }
+        return current;
     }
 
 }
