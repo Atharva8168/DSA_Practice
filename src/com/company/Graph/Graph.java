@@ -30,17 +30,16 @@ public class Graph {
     }
 
     public void addEdge(String from, String to){
-        var fromNode = new Node(from);
+        var fromNode = nodes.get(from);
         if (fromNode == null)
             throw new IllegalStateException();
 
-        var toNode = new Node(to);
+        var toNode = nodes.get(to);
         if (toNode == null)
             throw new IllegalStateException();
 
         adjacencyList.get(fromNode).add(toNode);
     }
-
 
     public void print(){
         for (var source : adjacencyList.keySet()){
@@ -48,6 +47,19 @@ public class Graph {
             if (!targets.isEmpty())
                 System.out.println(source + " is connected to " + targets);
         }
+
+    }
+
+    public void removeNode(String label){
+        var node = nodes.get(label);
+        if (node == null)
+            return;
+
+        for (var n : adjacencyList.keySet())
+            adjacencyList.get(n).remove(node);
+
+        adjacencyList.remove(node);
+        nodes.remove(node);
 
     }
 }
