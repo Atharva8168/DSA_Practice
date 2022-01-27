@@ -40,6 +40,14 @@ public class Graph {
 
         adjacencyList.get(fromNode).add(toNode);
     }
-    
 
+
+    public void print(){
+        for (var source : adjacencyList.keySet()){
+            var targets = adjacencyList.get(source);
+            if (!targets.isEmpty())
+                System.out.println(source + " is connected to " + targets);
+        }
+
+    }
 }
