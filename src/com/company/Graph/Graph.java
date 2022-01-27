@@ -29,5 +29,17 @@ public class Graph {
         adjacencyList.putIfAbsent(node, new ArrayList<>());
     }
 
+    public void addEdge(String from, String to){
+        var fromNode = new Node(from);
+        if (fromNode == null)
+            throw new IllegalStateException();
+
+        var toNode = new Node(to);
+        if (toNode == null)
+            throw new IllegalStateException();
+
+        adjacencyList.get(fromNode).add(toNode);
+    }
     
+
 }
