@@ -62,4 +62,14 @@ public class Graph {
         nodes.remove(node);
 
     }
+
+    public void removeEdge(String from, String to){
+        var fromNode = nodes.get(from);
+        var toNode = nodes.get(to);
+
+        if (fromNode == null || toNode == null)
+            return ;
+
+        adjacencyList.get(fromNode).remove(toNode);
+    }
 }

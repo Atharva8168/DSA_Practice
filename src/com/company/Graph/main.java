@@ -10,7 +10,8 @@ public class main {
         graph.addEdge("A","B");
         graph.addEdge("A","C");
         graph.addEdge("A","D");
-        graph.removeNode("B");
+//        graph.removeNode("B");
+        graph.removeEdge("A","C");
         graph.print();
     }
 }
