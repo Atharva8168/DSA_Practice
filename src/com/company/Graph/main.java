@@ -15,6 +15,7 @@ public class main {
 //        graph.removeEdge("A","C");
 //        graph.print();
 //        graph.traverseDepthFirstRec("A");
-        graph.traverseDepthFirst("B");
+//        graph.traverseDepthFirst("B");
+        graph.traverseBreathFirst("K");
     }
 }

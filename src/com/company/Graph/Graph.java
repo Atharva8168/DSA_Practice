@@ -111,5 +111,34 @@ public class Graph {
             }
         }
     }
+
+    public void traverseBreathFirst(String root){
+        var node = nodes.get(root);
+        if (node == null)
+            return;
+
+        Queue<Node> queue = new ArrayDeque<>();
+        Set<Node> visited = new HashSet<>();
+
+        queue.add(node);
+
+        while(!queue.isEmpty()){
+            var current = queue.remove();
+
+            if (visited.contains(current))
+                continue;
+
+            System.out.println(current);
+            visited.add(current);
+
+            for (var neighbour : adjacencyList.get(current)){
+                if (!visited.contains(neighbour))
+                    queue.add(neighbour);
+
+            }
+        }
+
+
+    }
 }
 
