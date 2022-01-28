@@ -1,9 +1,6 @@
 package com.company.Graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Graph {
 
@@ -72,4 +69,22 @@ public class Graph {
 
         adjacencyList.get(fromNode).remove(toNode);
     }
+
+    public void traverseDepthFirstRec(String root) {
+        var node = nodes.get(root);
+        if (node == null)
+            return;
+
+        traverseDepthFirstRec(node, new HashSet<>());
+    }
+
+    private void traverseDepthFirstRec(Node root, Set<Node> visited) {
+        System.out.println(root);
+        visited.add(root);
+
+        for (var node : adjacencyList.get(root))
+            if (!visited.contains(node))
+                traverseDepthFirstRec(node, visited);
+    }
+
 }
