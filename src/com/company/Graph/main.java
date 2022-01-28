@@ -18,6 +18,7 @@ public class main {
 ////        graph.traverseDepthFirst("B");
 //        graph.traverseBreathFirst("K");
 
+        //Topological Sort
 //        graph.addNode("X");
 //        graph.addNode("A");
 //        graph.addNode("B");
@@ -28,7 +29,7 @@ public class main {
 //        graph.addEdge("B", "P");
 //        System.out.println(graph.topologicalSort());;
 
-
+        // HasCycle
         graph.addNode("A");
         graph.addNode("B");
         graph.addNode("C");
