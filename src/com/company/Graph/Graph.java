@@ -155,8 +155,7 @@ public class Graph {
         return sorted;
     }
 
-    private void topologicalSort(
-            Node node, Set<Node> visited, Stack<Node> stack) {
+    private void topologicalSort(Node node, Set<Node> visited, Stack<Node> stack) {
         if (visited.contains(node))
             return;
 
@@ -168,5 +167,38 @@ public class Graph {
         stack.push(node);
     }
 
+    public boolean hasCycle() {
+        Set<Node> all = new HashSet<>();
+        Set<Node> visited = new HashSet<>();
+        Set<Node> visiting = new HashSet<>();
+
+        all.addAll(nodes.values());
+
+        while (!all.isEmpty()) {
+            var current = all.iterator().next();
+            if (hasCycle(current, all, visited, visiting))
+                return true;
+        }
+        return false;
+    }
+
+    private boolean hasCycle(Node node, Set<Node> all, Set<Node> visited, Set<Node> visiting){
+        all.remove(node);
+        visiting.add(node);
+
+        for (var neighbour : adjacencyList.get(node)){
+            if (visited.contains(neighbour))
+                return true;
+            if (visiting.contains(neighbour))
+                return true;
+
+            if (hasCycle(neighbour,all,visited,visiting))
+                return true;
+        }
+        visiting.remove(node);
+        visited.add(node);
+
+        return false;
+    }
 }
 
