@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Graph {
 
-    private class Node{
+    private class Node {
         private String label;
 
         public Node(String label) {
@@ -20,13 +20,13 @@ public class Graph {
     private Map<String, Node> nodes = new HashMap<>();
     private Map<Node, List<Node>> adjacencyList = new HashMap<>();
 
-    public void addNode(String label){
+    public void addNode(String label) {
         Node node = new Node(label);
         nodes.putIfAbsent(label, node);
         adjacencyList.putIfAbsent(node, new ArrayList<>());
     }
 
-    public void addEdge(String from, String to){
+    public void addEdge(String from, String to) {
         var fromNode = nodes.get(from);
         if (fromNode == null)
             throw new IllegalStateException();
@@ -38,8 +38,8 @@ public class Graph {
         adjacencyList.get(fromNode).add(toNode);
     }
 
-    public void print(){
-        for (var source : adjacencyList.keySet()){
+    public void print() {
+        for (var source : adjacencyList.keySet()) {
             var targets = adjacencyList.get(source);
             if (!targets.isEmpty())
                 System.out.println(source + " is connected to " + targets);
@@ -47,7 +47,7 @@ public class Graph {
 
     }
 
-    public void removeNode(String label){
+    public void removeNode(String label) {
         var node = nodes.get(label);
         if (node == null)
             return;
@@ -60,12 +60,12 @@ public class Graph {
 
     }
 
-    public void removeEdge(String from, String to){
+    public void removeEdge(String from, String to) {
         var fromNode = nodes.get(from);
         var toNode = nodes.get(to);
 
         if (fromNode == null || toNode == null)
-            return ;
+            return;
 
         adjacencyList.get(fromNode).remove(toNode);
     }
@@ -87,4 +87,29 @@ public class Graph {
                 traverseDepthFirstRec(node, visited);
     }
 
+    public void traverseDepthFirst(String root) {
+        var node = nodes.get(root);
+        if (node == null)
+            return;
+
+        Set<Node> visited = new HashSet<>();
+        Stack<Node> stack = new Stack<>();
+        stack.push(node);
+
+        while (!stack.isEmpty()) {
+            var current = stack.pop();
+
+            if (visited.contains(current))
+                continue;
+
+            System.out.println(current);
+            visited.add(current);
+
+            for (var neighbour : adjacencyList.get(current)) {
+                if (!visited.contains(neighbour))
+                    stack.push(neighbour);
+            }
+        }
+    }
 }
+
