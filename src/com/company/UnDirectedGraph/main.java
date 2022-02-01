@@ -7,8 +7,10 @@ public class main {
         graph.addNode("B");
         graph.addNode("C");
         graph.addEdge("A","B",3);
-        graph.addEdge("A","C",2);
-        graph.print();
-
+        graph.addEdge("B","C",2);
+        graph.addEdge("A","C",10);
+//        graph.print();
+        var shortestPath = graph.getShortestPath("A", "C");
+        System.out.println(shortestPath);
     }
 }
