@@ -12,11 +12,18 @@ public class main {
         graph.addEdge("C","D",5);
         graph.addEdge("A","C",1);
         graph.addEdge("B","C",2);
+
+        //Printing Graph
 //        graph.print();
+
+        //Shortest Path
 //        var shortestPath = graph.getShortestPath("A", "C");
 //        System.out.println(shortestPath);
+
+        //Has Cycles
 //        System.out.println(graph.hasCycle());
 
+        //Minimum Spanning tree
         var tree = graph.getMinimumSpanningTree();
         tree.print();
     }
