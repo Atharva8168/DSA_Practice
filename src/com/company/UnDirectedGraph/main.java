@@ -27,5 +27,4 @@ public class main {
         var tree = graph.getMinimumSpanningTree();
         tree.print();
     }
-
 }
