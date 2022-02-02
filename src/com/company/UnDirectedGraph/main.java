@@ -10,7 +10,8 @@ public class main {
         graph.addEdge("B","C",2);
         graph.addEdge("A","C",10);
 //        graph.print();
-        var shortestPath = graph.getShortestPath("A", "C");
-        System.out.println(shortestPath);
+//        var shortestPath = graph.getShortestPath("A", "C");
+//        System.out.println(shortestPath);
+        System.out.println(graph.hasCycle());
     }
 }
