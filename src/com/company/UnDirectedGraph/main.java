@@ -6,12 +6,19 @@ public class main {
         graph.addNode("A");
         graph.addNode("B");
         graph.addNode("C");
+        graph.addNode("D");
         graph.addEdge("A","B",3);
+        graph.addEdge("B","D",4);
+        graph.addEdge("C","D",5);
+        graph.addEdge("A","C",1);
         graph.addEdge("B","C",2);
-        graph.addEdge("A","C",10);
 //        graph.print();
 //        var shortestPath = graph.getShortestPath("A", "C");
 //        System.out.println(shortestPath);
-        System.out.println(graph.hasCycle());
+//        System.out.println(graph.hasCycle());
+
+        var tree = graph.getMinimumSpanningTree();
+        tree.print();
     }
+
 }
